@@ -66,8 +66,14 @@ const Template1UIUX = () => {
     setIsEditing(!isEditing);
   };
 
+  // Updated handleDownload to hide buttons before capturing PDF
   const handleDownload = async () => {
     const element = resumeRef.current;
+
+    // Hide buttons before generating PDF
+    const buttons = element.querySelectorAll("button");
+    buttons.forEach((btn) => (btn.style.display = "none"));
+
     const canvas = await html2canvas(element);
     const imgData = canvas.toDataURL("image/png");
     const pdf = new jsPDF("p", "mm", "a4");
@@ -75,6 +81,9 @@ const Template1UIUX = () => {
     const height = (canvas.height * width) / canvas.width;
     pdf.addImage(imgData, "PNG", 0, 0, width, height);
     pdf.save("resume.pdf");
+
+    // Show buttons again after PDF is generated
+    buttons.forEach((btn) => (btn.style.display = "block"));
   };
 
   // Add / Remove handlers
@@ -134,7 +143,7 @@ const Template1UIUX = () => {
         fontSize: "18px",
         marginBottom: "30px",
         outline: "none",
-        fontWeight: "normal", // ✅ Normal font for headings
+        fontWeight: "normal",
       }}
     >
       {text}
@@ -146,7 +155,7 @@ const Template1UIUX = () => {
       style={{
         fontFamily: "Century Gothic, sans-serif",
         padding: "20px",
-        color: "#003366", // Dark Blue Text 2
+        color: "#003366",
       }}
     >
       {/* Resume */}
@@ -211,7 +220,7 @@ const Template1UIUX = () => {
               contentEditable={isEditing}
               suppressContentEditableWarning={true}
               onBlur={(e) => handleContentChange("firstName", e)}
-              style={{ fontWeight: "bold" }} // ✅ Bold first name
+              style={{ fontWeight: "bold" }}
             >
               {resumeData.firstName}
             </span>{" "}
@@ -219,7 +228,7 @@ const Template1UIUX = () => {
               contentEditable={isEditing}
               suppressContentEditableWarning={true}
               onBlur={(e) => handleContentChange("lastName", e)}
-              style={{ fontWeight: "normal" }} // ✅ Normal last name
+              style={{ fontWeight: "normal" }}
             >
               {resumeData.lastName}
             </span>
@@ -468,7 +477,7 @@ const Template1UIUX = () => {
             }}
           ></div>
 
-          <div style={{ marginBottom: "200px" }}>   {/* ⬅️ Adds empty space */}
+          <div style={{ marginBottom: "200px" }}>
             <EditableHeading text="SKILLS" field="skillsHeading" />
             <ul
               style={{
@@ -520,7 +529,6 @@ const Template1UIUX = () => {
               </span>
             )}
           </div>
-
         </div>
       </div>
     </div>
