@@ -177,7 +177,7 @@ const Template1UIUX = () => {
             position: "absolute",
             top: "20px",
             left: "20px",
-            padding: "8px 16px",
+            padding: "10px 20px",
             background: "black",
             color: "white",
             border: "none",
