@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
-const ResumeTemplate = () => {
+const ResumeTemplate15 = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [resumeData, setResumeData] = useState({
     fullName: "Sheetal Parmar",
@@ -523,4 +523,4 @@ const ResumeTemplate = () => {
   );
 };
 
-export default ResumeTemplate;
+export default ResumeTemplate15;
