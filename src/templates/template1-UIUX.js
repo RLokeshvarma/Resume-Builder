@@ -171,46 +171,43 @@ const Template1UIUX = () => {
         }}
       >
         {/* Edit Button - Top Left */}
-        <button
-          onClick={toggleEdit}
-          style={{
-            position: "absolute",
-            top: "20px",
-            left: "20px",
-            padding: "10px 20px",
-            background: "black",
-            color: "white",
-            border: "none",
-            borderRadius: "50px",
-            cursor: "pointer",
-            transition: "background 0.3s",
-          }}
-          onMouseEnter={(e) => (e.target.style.background = "#007bff")}
-          onMouseLeave={(e) => (e.target.style.background = "black")}
-        >
-          {isEditing ? "Save" : "Edit"}
-        </button>
-
-        {/* Download Button - Top Right */}
-        <button
-          onClick={handleDownload}
-          style={{
-            position: "absolute",
-            top: "20px",
-            right: "20px",
-            padding: "8px 16px",
-            background: "black",
-            color: "white",
-            border: "none",
-            borderRadius: "50px",
-            cursor: "pointer",
-            transition: "background 0.3s",
-          }}
-          onMouseEnter={(e) => (e.target.style.background = "#007bff")}
-          onMouseLeave={(e) => (e.target.style.background = "black")}
-        >
-          Download
-        </button>
+        {/* Buttons */}
+                <button
+                    className="no-print"
+                    onClick={() => setIsEditing(!isEditing)}
+                    style={{
+                        position: "absolute",
+                        top: "10px",
+                        left: "10px",
+                        padding: "8px 16px",
+                        backgroundColor: "#333",
+                        color: "white",
+                        border: "none",
+                        borderRadius: "4px",
+                        cursor: "pointer",
+                        zIndex: 10
+                    }}
+                >
+                    {isEditing ? "Save" : "Edit"}
+                </button>
+                <button
+                    className="no-print"
+                    onClick={handleDownload}
+                    style={{
+                        position: "absolute",
+                        top: "10px",
+                        right: "10px",
+                        padding: "8px 16px",
+                        backgroundColor: "#333",
+                        color: "white",
+                        border: "none",
+                        borderRadius: "4px",
+                        cursor: "pointer",
+                        zIndex: 10
+                    }}
+                >
+                    Download
+                </button>
 
         {/* Left Column */}
         <div style={{ flex: 2, paddingTop: "80px", paddingLeft: "50px" }}>

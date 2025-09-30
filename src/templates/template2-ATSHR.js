@@ -125,42 +125,42 @@ const ResumeTemplate2ATSHR = () => {
         }}
       >
         {/* Buttons */}
-        <button
-          onClick={() => setIsEditing(!isEditing)}
-          style={{
-            position: "absolute",
-            top: "20px",
-            left: "20px",
-            padding: "10px 20px",
-            backgroundColor: "#01040aff",
-            color: "white",
-            border: "none",
-            borderRadius: "50px",
-            cursor: "pointer"
-          }}
-          onMouseOver={(e) => (e.target.style.backgroundColor = "#242525ff")}
-          onMouseOut={(e) => (e.target.style.backgroundColor = "#03050aff")}
-        >
-          {isEditing ? "Save" : "Edit"}
-        </button>
-        <button
-          onClick={handleDownload}
-          style={{
-            position: "absolute",
-            top: "20px",
-            right: "20px",
-            padding: "10px 20px",
-            backgroundColor: "#03050aff",
-            color: "white",
-            border: "none",
-            borderRadius: "50px",
-            cursor: "pointer"
-          }}
-          onMouseOver={(e) => (e.target.style.backgroundColor = "#242525ff")}
-          onMouseOut={(e) => (e.target.style.backgroundColor = "#03050aff")}
-        >
-          Download
-        </button>
+                <button
+                    className="no-print"
+                    onClick={() => setIsEditing(!isEditing)}
+                    style={{
+                        position: "absolute",
+                        top: "10px",
+                        left: "10px",
+                        padding: "8px 16px",
+                        backgroundColor: "#333",
+                        color: "white",
+                        border: "none",
+                        borderRadius: "4px",
+                        cursor: "pointer",
+                        zIndex: 10
+                    }}
+                >
+                    {isEditing ? "Save" : "Edit"}
+                </button>
+                <button
+                    className="no-print"
+                    onClick={handleDownload}
+                    style={{
+                        position: "absolute",
+                        top: "10px",
+                        right: "10px",
+                        padding: "8px 16px",
+                        backgroundColor: "#333",
+                        color: "white",
+                        border: "none",
+                        borderRadius: "4px",
+                        cursor: "pointer",
+                        zIndex: 10
+                    }}
+                >
+                    Download
+                </button>
 
         {/* Name */}
         <h1
