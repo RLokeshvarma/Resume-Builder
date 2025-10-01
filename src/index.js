@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Resume1 from './templates/template22-ATSBasic';
+import Resume1 from './templates/template25-Marketing';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
